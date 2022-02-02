@@ -1,0 +1,47 @@
+commit a00c73b92c7f5e072374a9891428b8b1f2ab994f
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Wed Feb 2 01:01:10 2022 -0500
+
+    Se sigue generando una actualización sobre el resumen con nuevas notas
+
+commit 72d4595ce83d76893da97fde4194869e325b3e61
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Wed Feb 2 00:30:11 2022 -0500
+
+    Se cambio el estilo y e ajusta el texto del resumen
+
+commit 88ba4403b3fa3bfa0bf7fa91c0b2476336a73f8a
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Wed Feb 2 00:20:52 2022 -0500
+
+    Este es el resumen de cada un o de los comandos creados y detalle de la clase
+
+commit 16ee200fa91a3e5a58732302283cf037c86e7450
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Tue Feb 1 23:44:23 2022 -0500
+
+    obra maestra
+
+commit 653f864be1fbf86f8d14ef850ac9f7d6f2838a4d
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Tue Feb 1 23:42:53 2022 -0500
+
+    Cambio de vida
+
+commit 812102d70e855d71876bfe38907f3890bfc443bc
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Tue Feb 1 23:39:52 2022 -0500
+
+    Arranco mi proyecto real y css
+
+commit d6bec601a56e2c7f4cc0c09143df10b85fd713b6
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Sun Jan 30 00:54:32 2022 -0500
+
+    Cambios para modificar la edad
+
+commit 9642afe6ca05be7ca142e7b8968b34c7fa7df910
+Author: Henry Hernandez <hghernandezg@gmail.com>
+Date:   Sun Jan 30 00:48:18 2022 -0500
+
+    Este es el primer commit de este archivo
