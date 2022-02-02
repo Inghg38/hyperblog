@@ -1,7 +1,15 @@
-body{
-
-    color:cadetblue;
+head{
+    color: brown;
     text-align: center;
-    font-family: Arial;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+
+body{
+
+    color:black;
+    text-align: justify;
+    font-family: Arial;
+    background-color: burlywood;
+        
+}
