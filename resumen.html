@@ -7,9 +7,70 @@
     </head>
     <body>
         <h1>Resumen del GIT</h1>
-        <p>
-            Git reset y git rm son comandos con utilidades muy diferentes, pero aún así se confunden muy fácilmente.
-        </p>
+        
+            <h4>Iniciar Repositorio</h4>
+            <p>
+            Para iniciar un repositorio, o sea, activar el sistema de control de versiones de Git en tu proyecto, solo debes ejecutar el comando<b> git init</b>.               
+            </p>
+            <p>
+                Este comando se encargará de dos cosas: primero, crear una carpeta .git, donde se guardará toda la base de datos con cambios atómicos de nuestro proyecto; y segundo, crear un área que conocemos como Staging, que guardará temporalmente nuestros archivos (cuando ejecutemos un comando especial para eso) y nos permitirá, más adelante, guardar estos cambios en el repositorio (también con un comando especial).
+            </p>
+        <h4>Ciclo de vida o estados de los archivos en Git:</h4>
+        <p>Cuando trabajamos con Git nuestros archivos pueden vivir y moverse entre 4 diferentes estados (cuando trabajamos con repositorios remotos pueden ser más estados, pero lo estudiaremos más adelante):</p>
+        <div class="col-sm">
+            <table class="default"> 
+                <tbody style="background: rgba(0, 60, 255, 0.3); border: 1px solid rgba(0, 120, 200, 0.3);">
+                <tr>
+                <th scope="row"><h4>Concepto</h4>&nbsp;</th>
+                <th><h4>Descripción</h4>&nbsp;</th>
+                </tr>
+                <tr>
+                <td><b>Archivos Tracked:</b>&nbsp;</td>
+                <td>son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.&nbsp;</td>
+                </tr>
+                <tr>
+                <td><b>Archivos Staged:</b>&nbsp;</td>
+                <td>son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando git commit.&nbsp;</td>
+                </tr>
+                <tr>
+                <td><b>Archivos Unstaged:</b>&nbsp;</td>
+                <td>Entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.&nbsp;</td>
+                </tr>
+                <tr>
+                <td><b>Archivos Untracked:</b>&nbsp;</td>
+                <td>Son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.<br>
+                    Recuerda que hay un caso muy raro donde los archivos tienen dos estados al mismo tiempo: staged y untracked. Esto pasa cuando guardas los cambios de un archivo en el área de Staging (con el comando git add), pero antes de hacer commit para guardar los cambios en el repositorio haces nuevos cambios que todavía no han sido guardados en el área de Staging (en realidad, todo sigue funcionando igual pero es un poco divertido).&nbsp;</td>
+                </tr>
+                <h4>Comandos para mover archivos entre los estados de Git:</h4>
+                <tr>
+                <td><b>git status:</b>&nbsp;</td>
+                <td>Nos permite ver el estado de todos nuestros archivos y carpetas.&nbsp;</td>
+                </tr>
+                <tr>
+                <td><b>git add: </b>&nbsp;</td>
+                <td>nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar git nombre-del-archivo-o-carpeta para añadir archivos y carpetas individuales o git add -A para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).&nbsp;</td>
+                </tr>
+                <tr>
+                <td><b>git reset HEAD:</b>&nbsp;</td>
+                <td>nos ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. Si los archivos venían de Unstaged, vuelven allí. Y lo mismo se venían de Untracked.&nbsp;</td>
+                </tr>
+                <tr>
+                <td><b>git commit:</b>&nbsp;</td>
+                <td>nos ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardados o actualizados en el repositorio. Git nos pedirá que dejemos un mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").&nbsp;</td>
+                </tr>
+                <tr>
+                <td><b>git rm:</b>&nbsp;</td>
+                <td>este comando necesita alguno de los siguientes argumentos para poder ejecutarse correctamente:<br>
+                    <b>git rm --cached: </b> Mueve los archivos que le indiquemos al estado Untracked.<br>
+                    <b>git rm --force:</b>Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados). &nbsp;</td>
+                </tr>
+                
+                </tbody>
+                </table><br>
+        </div>
+        
+            <p>Git reset y git rm son comandos con utilidades muy diferentes, pero aún así se confunden muy fácilmente.</p>
+                    
         <title>
             <h2>git rm</h2>
         </title> 
@@ -66,16 +127,52 @@ Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendi
        <h4>
            Algunos comandos que pueden ayudar cuando colaboren con proyectos muy grandes de github:
        </h4>        
+       <table class="default"> 
+        <tbody style="background: rgba(0, 60, 255, 0.3); border: 1px solid rgba(0, 120, 200, 0.3);">
+        <tr>
+        <th scope="row"><h4>Concepto</h4>&nbsp;</th>
+        <th><h4>Descripción</h4>&nbsp;</th>
+        </tr>
+        <tr>
+            <td><b>git log --oneline</b>&nbsp;</td>
+            <td>Te muestra el id commit y el título del commit.&nbsp;</td>
+        </tr>
+        <tr>
+            <td><b>git log --decorate</b>&nbsp;</td>
+            <td>Te muestra donde se encuentra el head point en el log.&nbsp;</td>
+        </tr>
+        <tr>
+            <td><b>git log --stat</b>&nbsp;</td>
+            <td>Explica el número de líneas que se cambiaron brevemente.&nbsp;</td>
+        </tr>
+        <tr>
+            <td><b>git log -p</b>&nbsp;</td>
+            <td>Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.&nbsp;</td>
+        </tr>        
+        <tr>
+            <td><b>git shortlog</b>&nbsp;</td>
+            <td>Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.&nbsp;</td>
+        </tr>
+        <tr>
+            <td><b>git log --pretty=format:</b>&nbsp;</td>
+            <td>"%cn hizo un commit %h el dia %cd" - Muestra mensajes personalizados de los commits.&nbsp;</td>
+        </tr>
+        <tr>
+            <td><b>git log -3</b>&nbsp;</td>
+            <td>Limitamos el número de commits.&nbsp;</td>
+        </tr>
+        <tr>
+            <td><b>git log --after</b>&nbsp;</td>
+            <td>git log --after=“2018-1-2” ,&nbsp;</td>
+        </tr>
+        <tr>
+            <td><b></b>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        
+        </tbody>
+       </table>
 
-<p> git log --oneline - Te muestra el id commit y el título del commit. </p>
-<p> git log --decorate- Te muestra donde se encuentra el head point en el log. </p>
-<p> git log --stat - Explica el número de líneas que se cambiaron brevemente. </p>
-<p> git log -p- Explica el número de líneas que se cambiaron y te muestra que se cambió en el contenido.</p>
-<p> git shortlog - Indica que commits ha realizado un usuario, mostrando el usuario y el titulo de sus commits.</p>
-<p> git log --graph --oneline --decorate y </p>
-<p> git log --pretty=format:"%cn hizo un commit %h el dia %cd" - Muestra mensajes personalizados de los commits.</p>
-<p> git log -3 - Limitamos el número de commits.</p>
-<p> git log --after=“2018-1-2” ,</p>
 <p> git log --after=“today” y</p>
 <p> git log --after=“2018-1-2” --before=“today” - Commits para localizar por fechas.</p>
 <p> git log --author=“Name Author” - Commits realizados por autor que cumplan exactamente con el nombre.</p>
