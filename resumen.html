@@ -7,6 +7,10 @@
     </head>
     <body>
         <h1>Resumen del GIT</h1>
+
+        <p>Todos estos comandos tiene una función de autocompletado, o sea, puedes escribir la primera parte y presionar la tecla Tab para que la terminal nos muestre todas las posibles carpetas o comandos que podemos ejecutar. Si presionas la tecla Arriba puedes ver el último comando que ejecutamos.</p>
+
+        <p>Recuerda que podemos descubrir todos los argumentos de un comando con el argumento --help (por ejemplo, cat --help).</p>
         
             <h4>Iniciar Repositorio</h4>
             <p>
@@ -15,7 +19,100 @@
             <p>
                 Este comando se encargará de dos cosas: primero, crear una carpeta .git, donde se guardará toda la base de datos con cambios atómicos de nuestro proyecto; y segundo, crear un área que conocemos como Staging, que guardará temporalmente nuestros archivos (cuando ejecutemos un comando especial para eso) y nos permitirá, más adelante, guardar estos cambios en el repositorio (también con un comando especial).
             </p>
+            <p>El comando para que nuestro repositorio sepa de la existencia de un archivo o sus últimos cambios es git add. Este comando no almacena las actualizaciones de forma definitiva, solo las guarda en algo que conocemos como “Staging Area” (no te preocupes, lo entenderemos más adelante).</p>
+            <p>El comando para almacenar definitivamente todos los cambios que por ahora viven en el staging area es git commit. También podemos guardar un mensaje para recordar muy bien qué cambios hicimos en este commit con el argumento -m "Mensaje del commit".</p>
+            <p>Por último, si queremos mandar nuestros commits a un servidor remoto, un lugar donde todos podamos conectar nuestros proyectos, usamos el comando git push</p>
+
+            <h4>Tipos de archivos y sus diferencias:</h4>
+
+            <div class="col-sm">
+                <table class="default"> 
+                    <tbody style="background: rgba(0, 60, 255, 0.3); border: 1px solid rgba(0, 120, 200, 0.3);">
+                    <tr>
+                    <th scope="row"><h4>Concepto</h4>&nbsp;</th>
+                    <th><h4>Descripción</h4>&nbsp;</th>
+                    </tr>
+                    <tr>
+                    <td><b>Archivos de Texto (.txt):</b>&nbsp;</td>
+                    <td>Texto plano normal y sin nada especial. Lo vemos igual sin importar dónde lo abramos, ya sea con el bloc de notas o con editores de texto avanzados.&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>Archivos RTF (.rtf):</b>&nbsp;</td>
+                        <td>Podemos guardar texto con diferentes tamaños, estilos y colores. Pero si lo abrimos desde un editor de código, vamos a ver que es mucho más complejo que solo el texto plano. Esto es porque debe guardar todos los estilos del texto y, para esto, usa un código especial un poco difícil de entender y muy diferente a los textos con estilos especiales al que estamos acostumbrados.&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>Archivos de Word (.docx): </b>&nbsp;</td>
+                        <td>Podemos guardar imágenes y texto con diferentes tamaños, estilos o colores. Al abrirlo desde un editor de código podemos ver que es código binario, muy difícil de entender y muy diferente al texto al que estamos acostumbrados. Esto es porque Word está optimizado para entender este código especial y representarlo gráficamente.&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <h4>Comandos básicos en la terminal:</h4>
+
+            <div class="col-sm">
+                <table class="default"> 
+                    <tbody style="background: rgba(0, 60, 255, 0.3); border: 1px solid rgba(0, 120, 200, 0.3);">
+                    <tr>
+                    <th scope="row"><h4>Concepto</h4>&nbsp;</th>
+                    <th><h4>Descripción</h4>&nbsp;</th>
+                    </tr>
+                    <tr>
+                    <td><b>pwd:</b>&nbsp;</td>
+                    <td>Nos muestra la ruta de carpetas en la que te encuentras ahora mismo.&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>mkdir:</b>&nbsp;</td>
+                        <td>Nos permite crear carpetas (por ejemplo, mkdir Carpeta-Importante)&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>touch: </b>&nbsp;</td>
+                        <td>Nos permite crear archivos (por ejemplo, touch archivo.txt).&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>rm: </b>&nbsp;</td>
+                        <td>Nos permite borrar un archivo o carpeta (por ejemplo, rm archivo.txt). Mucho cuidado con este comando, puedes borrar todo tu disco duro.&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>cat: </b>&nbsp;</td>
+                        <td>Ver el contenido de un archivo (por ejemplo, cat nombre-archivo.txt).&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>ls: </b>&nbsp;</td>
+                        <td>Nos permite cambiar ver los archivos de la carpeta donde estamos ahora mismo. Podemos usar uno o más argumentos para ver más información sobre estos archivos (los argumentos pueden ser -- + el nombre del argumento o - + una sola letra o shortcut por cada argumento).<br>
+                            <p><b>ls -a:</b> Mostrar todos los archivos, incluso los ocultos.</p>
+                            <b>ls -l:</b> Ver todos los archivos como una lista.&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>cd:  </b>&nbsp;</td>
+                        <td>Nos permite navegar entre carpetas.<br>
+                            <p><b>cd /:</b>Ir a la ruta principal:</p>
+                            <p><b>cd o cd ~:</b>Ir a la ruta de tu usuario</p>
+                            <p><b>cd carpeta/subcarpeta:</b>Navegar a una ruta dentro de la carpeta donde estamos ahora mismo.</p></td>
+                    </tr>
+                    <tr>
+                        <td><b>cd .. (cd + dos puntos): </b>&nbsp;</td>
+                        <td>Regresar una carpeta hacia atrás.
+                            - Si quieres referirte al directorio en el que te encuentras ahora mismo puedes usar cd . (cd + un punto).&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>history: </b>&nbsp;</td>
+                        <td>Ver los últimos comandos que ejecutamos y un número especial con el que podemos repetir su ejecución.&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>! + número: </b>&nbsp;</td>
+                        <td>Ejecutar algún comando con el número que nos muestra el comando history (por ejemplo, !72).&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td><b>clear: </b>&nbsp;</td>
+                        <td>Para limpiar la terminal. También podemos usar los atajos de teclado Ctrl + L o Command + L&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
         <h4>Ciclo de vida o estados de los archivos en Git:</h4>
+
         <p>Cuando trabajamos con Git nuestros archivos pueden vivir y moverse entre 4 diferentes estados (cuando trabajamos con repositorios remotos pueden ser más estados, pero lo estudiaremos más adelante):</p>
         <div class="col-sm">
             <table class="default"> 
@@ -189,6 +286,12 @@ Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendi
        <p> git fetch: Lo usamos para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).</p>
        <p> git merge: También usamos el comando git merge con servidores remotos. Lo necesitamos para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.</p>
        <p> git pull: Básicamente, git fetch y git merge al mismo tiempo.</p>
+
+       <h4>Introducción a las ramas o branches de Git</h4>
+
+       <p>Las ramas son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.</p>
+
+       <p>La cabecera o HEAD representan la rama y el commit de esa rama donde estamos trabajando. Por defecto, esta cabecera aparecerá en el último commit de nuestra rama principal. Pero podemos cambiarlo al crear una rama (git branch rama, git checkout -b rama) o movernos en el tiempo a cualquier otro commit de cualquier otra rama con los comandos (git reset id-commit, git checkout rama-o-id-commit).</p>
 
     </body>
 </html>
